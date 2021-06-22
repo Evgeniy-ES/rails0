@@ -1,1 +1,3 @@
-# Version app0 = '1.0'
+def version
+  '1.0.0'
+end
