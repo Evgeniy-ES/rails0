@@ -1,9 +1,9 @@
 class AddUsersTitleNullConstraint < ActiveRecord::Migration[6.1]
   def up
-    change_column_null(users, name, false)
+    change_column_null(:users, :name, false)
   end
 
   def down
-    change_column_null(users, name, true)
+    change_column_null(:users, :name, true)
   end
 end

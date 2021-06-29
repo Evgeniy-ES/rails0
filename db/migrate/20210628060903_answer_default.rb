@@ -1,9 +1,9 @@
 class AnswerDefault < ActiveRecord::Migration[6.1]
   def up
-    change_column :answers, :correct, default: "Good!"
+    change_column_default(:answers, :answer, 'Good!')
   end
 
   def down
-    change_column :answers, :correct, default: nil
+    change_column_default(:answers, :answer, nil)
   end
 end

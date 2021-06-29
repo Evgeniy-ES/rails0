@@ -1,9 +1,9 @@
 class AddCategoriesTitleNullConstraint < ActiveRecord::Migration[6.1]
   def up
-    change_column_null(categories, category, false)
+    change_column_null(:categories, :category, false)
   end
 
   def down
-    change_column_null(categories, category, true)
+    change_column_null(:categories, :category, true)
   end
 end
