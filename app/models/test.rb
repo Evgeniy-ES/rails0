@@ -4,10 +4,10 @@ class Test < ApplicationRecord
 
   belongs_to :author, class_name: 'User', foregin_key: :author_id
 
-  scope :category_name0, -> (category) {joins(:category).where(categories: {title :category}) }
+  scope :by_category_name, ->(category) { joins(:category).where(categories: { title: category }) }
 
-  def self.category_name(category)
-    category_name0(category).order(id: desc).pluck('test.title')
+  def self.by_category_name_arr(category)
+    by_category_name(category).order(id: :desc).pluck('tests.title')
   end
 
   scope :simple_level, -> { where(level: 0..1) }
