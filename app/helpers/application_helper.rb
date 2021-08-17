@@ -3,7 +3,7 @@ module ApplicationHelper
     Date.today.year
   end
 
-  def github_url(author, repo)
-    "https://github.com/#{author}/#{repo}"
+  def github_url
+    "https://github.com/Evgeniy-ES/rails0"
   end
 end

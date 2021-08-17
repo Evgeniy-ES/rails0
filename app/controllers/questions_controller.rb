@@ -15,13 +15,17 @@ class QuestionsController < ApplicationController
   end
 
   def update
-    @question = Question.find(params[:id])
-    if @question
+    find_question
+     if @question.update(questions_params)
+      redirect_to @question
+    else
+      render :edit
+    end
 
   end
 
   def edit
-    @question = Question.find(params[:id])
+    find_question
   end
 
   def create
@@ -38,7 +42,7 @@ class QuestionsController < ApplicationController
     @question = Question.find(params[:id])
 
     @question.destroy
-    redirect_to question_path
+    redirect_back(fallback_location: '/')
   end
 
   private
