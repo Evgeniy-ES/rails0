@@ -6,4 +6,9 @@
   </tr>
 
   <%= render @question %>>
+
+  <br>
+  <h2>Answers</h2>
+  <%= link_to 'New answer', new_question_answer_path(@question) %>
+  <%= render @question.answers %>
 </table>
