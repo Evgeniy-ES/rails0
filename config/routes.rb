@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
+  get 'users/new'
   root to: "home#index"
+
+  get :singup, to: 'users#new'
+
+  resources :users, only: :create
 
   resources  :test do
     resources :questions, shallow: true do

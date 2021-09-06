@@ -14,5 +14,8 @@
     <%= yield %>
 
    <%= render 'home/footer' %>
+   <% if logged_in? %>
+    <p class="nav user">Welcome, <b><%= current_user.email %> Guru </b>| <%= link_to 'Exit', logout_path %></p>
+    <% end %>
   </body>
 </html>
