@@ -5,9 +5,8 @@ class QuestionsController < ApplicationController
 
   rescue_form ActiveRecord::RecordNotFound, with: :rescue_with_question_not_found
 
-  def index
-    @questions = @test.questions
-    render plain: questions.inspect
+  def new
+    @question = @test.questions.new
   end
 
   def show
