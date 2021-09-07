@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
-  get 'users/new'
+
   root to: "home#index"
 
   get :singup, to: 'users#new'
+  get :login, to: 'sessions#new'
+  get :logout, to: 'sessions#destroy'
 
   resources :users, only: :create
 
