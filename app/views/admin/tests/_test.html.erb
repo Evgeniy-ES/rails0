@@ -1,0 +1,9 @@
+<tr>
+  <td class="title"><%= test.title %></td>
+  <td class="id"><%= test.level %></td>
+  <td class="id"><%= test.author_id %></td>
+  <td class="id"><%= test.questions.count %></td>
+  <td class="functions"><%= link_to "Show", admin_test_path(test) %></td>
+  <td class="functions"><%= link_to "Edit", edit_admin_test_path(test) %></td>
+  <td class="functions"><%= link_to "Delete", admin_test_path(test), method: :delete, data: { confirm: "Delete test?" } %></td>
+</tr>
