@@ -36,11 +36,6 @@ class Admin::TestsController < Admin::BaseController
     redirect_to tests_path
   end
 
-  def start
-    current_user.tests.push(@test)
-    redirect_to @user.test_passage(@test)
-  end
-
   private
 
   def find_test
@@ -48,7 +43,7 @@ class Admin::TestsController < Admin::BaseController
   end
 
   def test_params
-    params.require(:test).permit(:title, :level, :category_id, :author_id)
+    params.require(:test).permit(:title, :level, :category_id)
   end
 
   def rescue_with_test_not_found
